@@ -1,0 +1,71 @@
+/***********************************************************************************************************************
+ * Plugins
+ **********************************************************************************************************************/
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'application'
+apply plugin: 'war'
+apply from: 'http://plugins.jasoft.fi/vaadin.plugin'
+
+/***********************************************************************************************************************
+ * Basic properties
+ **********************************************************************************************************************/
+version '1.0-SNAPSHOT'
+group = "de.team42.vivalamerkel"
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+/***********************************************************************************************************************
+ * Repositories & Dependencies
+ **********************************************************************************************************************/
+repositories {
+    mavenCentral()
+}
+
+dependencies{
+    //Logging
+    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.5'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.5'
+    compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.21'
+
+    //JavaX
+    compile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.1.0'
+
+    //Vaadin
+    compile group: 'com.vaadin', name: 'vaadin-server', version: '7.6.4'
+    compile group: 'com.vaadin', name: 'vaadin-client', version: '7.6.4'
+    compile group: 'com.vaadin', name: 'vaadin-client-compiled', version: '7.6.4'
+    compile group: 'com.vaadin', name: 'vaadin-push', version: '7.6.4'
+    compile group: 'com.vaadin', name: 'vaadin-themes', version: '7.6.4'
+
+    compile group: 'junit', name:'junit', version:'4.12'
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+/***********************************************************************************************************************
+ * Vaadin
+ **********************************************************************************************************************/
+vaadin{
+    version '7.6.4'
+    debug false
+    debugPort 8000
+    profiler false
+    manageRepositories = true
+    manageDependencies true
+    gwt{
+        style "OBF"
+        optimize 9
+        logging true
+        logLevel "INFO"
+        strict true
+    }
+}
+
+/***********************************************************************************************************************
+ * Gradle Wrapper
+ **********************************************************************************************************************/
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.13'
+    distributionUrl = "https://services.gradle.org/distributions/gradle-$gradleVersion-all.zip"
+}
+

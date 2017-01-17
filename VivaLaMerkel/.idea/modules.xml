@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/VivaLaMerkel.iml" filepath="$PROJECT_DIR$/.idea/modules/VivaLaMerkel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/VivaLaMerkel_main.iml" filepath="$PROJECT_DIR$/.idea/modules/VivaLaMerkel_main.iml" group="VivaLaMerkel" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/VivaLaMerkel_test.iml" filepath="$PROJECT_DIR$/.idea/modules/VivaLaMerkel_test.iml" group="VivaLaMerkel" />
+    </modules>
+  </component>
+</project>
